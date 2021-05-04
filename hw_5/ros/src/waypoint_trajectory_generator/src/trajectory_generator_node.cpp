@@ -271,7 +271,7 @@ Vector3d getPosPoly( MatrixXd polyCoeff, int k, double t )
 
 VectorXd timeAllocation( MatrixXd Path)
 { 
-    VectorXd time(Path.rows() - 1, 1.0);
+    VectorXd time(Path.rows()-1);
     
     /*
 
@@ -285,6 +285,7 @@ VectorXd timeAllocation( MatrixXd Path)
 
     */
     for (int idx = 0; idx < time.size(); idx++) time(idx) = 1.0;
+    ROS_INFO("timeAllocation");
     
     return time;
 }
