@@ -89,7 +89,7 @@ void trajGeneration(Eigen::MatrixXd path)
     visWayPointPath(path);
 
     //After you finish your homework, you can use the function visWayPointTraj below to visulize your trajectory
-    //visWayPointTraj( _polyCoeff, _polyTime);
+    visWayPointTraj( _polyCoeff, _polyTime);
 }
 
 int main(int argc, char** argv)
@@ -99,7 +99,7 @@ int main(int argc, char** argv)
 
     nh.param("planning/vel",   _Vel,   1.0 );
     nh.param("planning/acc",   _Acc,   1.0 );
-    nh.param("planning/dev_order", _dev_order,  3 );
+    nh.param("planning/dev_order", _dev_order,  4 );
     nh.param("planning/min_order", _min_order,  3 );
     nh.param("vis/vis_traj_width", _vis_traj_width, 0.15);
 

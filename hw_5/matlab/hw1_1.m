@@ -30,6 +30,7 @@ end
 poly_coef_x = MinimumSnapQPSolver(path(:, 1), ts, n_seg, n_order);
 poly_coef_y = MinimumSnapQPSolver(path(:, 2), ts, n_seg, n_order);
 
+size(poly_coef_x)
 
 % display the trajectory
 X_n = [];
@@ -40,6 +41,9 @@ for i=0:n_seg-1
     %#####################################################
     % STEP 3: get the coefficients of i-th segment of both x-axis
     % and y-axis
+    Pxi = flip(poly_coef_x((n_order+1)*i+1:(n_order+1)*(i+1)));
+    Pyi = flip(poly_coef_y((n_order+1)*i+1:(n_order+1)*(i+1)));
+
     for t = 0:tstep:ts(i+1)
         X_n(k)  = polyval(Pxi, t);
         Y_n(k)  = polyval(Pyi, t);

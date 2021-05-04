@@ -22,6 +22,12 @@ class TrajectoryGeneratorWaypoint {
             const Eigen::VectorXd &Time);
         
         int Factorial(int x);
+        
+        void get_Q(const int p_order,const Eigen::VectorXd &ts, Eigen::MatrixXd &Q) ;
+
+        void get_M(int p_order, const Eigen::VectorXd &ts, Eigen::MatrixXd &M);
+
+        void get_Ct(int d_order, int p_order, const Eigen::VectorXd &ts, Eigen::MatrixXd &Ct);
 };
         
 
